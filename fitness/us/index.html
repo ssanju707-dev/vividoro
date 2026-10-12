@@ -27,12 +27,14 @@ nav ul{display:flex;gap:32px;list-style:none;font-size:14.5px;color:var(--mute);
 .btn:hover{background:var(--ember2);transform:translateY(-2px)}.btn.line{background:transparent;border:1px solid #4a5058;color:#fff}.btn.line:hover{background:rgba(255,255,255,.07)}
 nav .btn{padding:11px 20px;font-size:13px}
 /* hero */
-.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 30%}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,15,17,.92) 0%,rgba(14,15,17,.55) 48%,rgba(14,15,17,.15) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 40%)}
-.hero .wrap{position:relative;z-index:2;padding-bottom:84px;padding-top:90px;width:100%}
+.hero{position:relative;overflow:hidden;padding:56px 0 72px}
+.hero .hg{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;max-width:1180px;margin:0 auto;padding:0 28px}
+.hero .ph{position:relative;aspect-ratio:4/5;max-height:640px;justify-self:end;width:100%}
+.hero .ph:before{content:"";position:absolute;left:26px;top:26px;right:-26px;bottom:-26px;background:var(--ember)}
+.hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 25%}
+.hero .wrap{position:relative;z-index:2;padding:0;width:100%;min-width:0}
 .eyebrow{font:700 13px Inter;letter-spacing:.26em;text-transform:uppercase;color:var(--ember);margin-bottom:18px;display:block}
-.hero h1{font-size:clamp(64px,10vw,150px);max-width:900px;margin-bottom:22px}.hero h1 em{font-style:normal;color:var(--ember)}
+.hero h1{font-size:clamp(56px,7.6vw,118px);max-width:760px;margin-bottom:22px}.hero h1 em{font-style:normal;color:var(--ember)}
 .hero p{font-size:19px;color:#d4d7dc;max-width:520px;margin-bottom:34px}.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
 .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}.pills span{border:1px solid #3a3f46;border-radius:999px;padding:8px 16px;font-size:13.5px;color:#cfd3d9;background:rgba(14,15,17,.5)}
 /* sections */
@@ -65,7 +67,7 @@ footer{padding:44px 0;color:var(--mute);font-size:14px;border-top:1px solid var(
 .fab{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 34px rgba(0,0,0,.5)}.fab svg{width:28px;height:28px;color:#06210f}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
 @media(max-width:980px){.cls{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}.why{grid-template-columns:1fr}.band{grid-template-columns:1fr;padding:36px 26px}nav ul{display:none}.slot{grid-template-columns:96px 1fr}.slot a{grid-column:1/-1;text-align:center}}
-@media(max-width:620px){.cls{grid-template-columns:1fr}.sec{padding:64px 0}.hero{min-height:84vh}.hero:after{background:linear-gradient(0deg,var(--bg) 0%,rgba(14,15,17,.55) 55%,rgba(14,15,17,.3) 100%)}.hero .wrap{padding-bottom:50px}.logo{font-size:28px}nav .btn{padding:10px 14px;font-size:12px;white-space:nowrap}.ribbon{font-size:12.5px}}
+@media(max-width:620px){.cls{grid-template-columns:1fr}.sec{padding:64px 0}.hero{padding:28px 0 48px}.hero .hg{grid-template-columns:1fr;gap:36px}.hero .ph{order:-1;max-height:420px;aspect-ratio:4/3;width:calc(100% - 26px)}.hero .hg>*{min-width:0}.hero h1{font-size:clamp(44px,13vw,64px)}.hero .hg{padding:0 22px}.logo{font-size:28px}nav .btn{padding:10px 14px;font-size:12px;white-space:nowrap}.ribbon{font-size:12.5px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -75,13 +77,13 @@ footer{padding:44px 0;color:var(--mute);font-size:14px;border-top:1px solid var(
 <ul><li><a href="#classes">Classes</a></li><li><a href="#timetable">Timetable</a></li><li><a href="#plans">Membership</a></li><li><a href="#faq">First visit</a></li></ul>
 <a class="btn" href="#trial">Free trial</a></div></nav>
 
-<header class="hero" id="top"><img src="../img/hero.jpg" alt="Athlete standing in a concrete studio space" fetchpriority="high"><div class="wrap">
+<header class="hero" id="top"><div class="hg"><div class="wrap">
 <span class="eyebrow">Asheville, NC &middot; Strength &amp; conditioning studio</span>
 <h1>Strength,<br>built <em>together.</em></h1>
 <p>Small-batch classes, coaches who know your name, and a plan that fits your week. Your first class is on us.</p>
 <div class="acts" id="trial"><a class="btn" href="https://ig.me/m/vividoro.studio" target="_blank" rel="noopener">Book a free trial by DM</a><a class="btn line" href="#timetable">See the timetable</a></div>
 <div class="pills"><span>Max 10 per class</span><span>All levels welcome</span><span>First class free</span></div>
-</div></header>
+</div><div class="ph"><img src="../img/hero.jpg" alt="Athlete standing in a concrete studio space" fetchpriority="high"></div></div></header>
 
 <section class="sec" id="classes"><div class="wrap">
 <span class="eyebrow rv">What we teach</span><h2 class="rv">Four ways to get stronger</h2><p class="sub rv">Every class is coached from warm-up to cool-down, with options for every level.</p>
